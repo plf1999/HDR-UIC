@@ -25,3 +25,17 @@ python train.py
 ```
 python test.py --checkpoint /path/to/checkpoint
 ```
+
+## Citation
+If you find our work useful, please cite it as:
+```
+@article{shen2025breaking,
+  title={Breaking Boundaries: Unifying Imaging and Compression for HDR Image Compression},
+  author={Shen, Xuelin and Pan, Linfeng and Ni, Zhangkai and He, Yulin and Yang, Wenhan and Wang, Shiqi and Kwong, Sam},
+  journal={IEEE Transactions on Image Processing},
+  volume={34},
+  pages={510-521},
+  year={2025},
+  publisher={IEEE}
+}
+```
