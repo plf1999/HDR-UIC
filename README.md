@@ -8,7 +8,7 @@ High Dynamic Range (HDR) images present unique challenges for Learned Image Comp
 ## Environment
 Python 3.8.18 \
 PyTorch 1.13.0 \
-CompressAI 1.2.4 \
+CompressAI 1.2.4 
 
 ## Dataset
 The datasets evaluated in our paper are listed below, please download it at the following link: \
@@ -17,9 +17,11 @@ The datasets evaluated in our paper are listed below, please download it at the 
 
 ## Running the model
 ### Training
-`python train.py
-`
+```
+python train.py
+```
 
 ### Testing
-`python test.py --pretrained_model /path/to/checkpoint`
-
+```
+python test.py --checkpoint /path/to/checkpoint
+```
