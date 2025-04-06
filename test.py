@@ -17,7 +17,7 @@ parser.add_argument('--test_batch_size', type=int, default=1, metavar='N',
 parser.add_argument('--num_workers', type=int, default=1, metavar='N',
                         help='number of workers to fetch data')
 parser.add_argument('--patch_size', type=int, default=256)
-parser.add_argument('--pretrained_model', type=str)
+parser.add_argument('--checkpoint', type=str)
 parser.add_argument('--test_best', action='store_true', default=False)
 parser.add_argument('--save_results', action='store_true', default=True)
 parser.add_argument('--save_dir', type=str, default="./results/")
@@ -54,7 +54,7 @@ def test_single_img(model, img_dataset, device):
 def main():
     args = parser.parse_args()
     print(">>>>>>>>> Start Testing >>>>>>>>>")
-    print("Load weights from: ", args.pretrained_model)
+    print("Load weights from: ", args.checkpoint)
     print(args.patch_size)
 
     os.environ["CUDA_VISIBLE_DEVICES"] = '0'
@@ -72,7 +72,7 @@ def main():
                   embed_dim=60, num_heads=[6, 6, 6, 6, 6, 6, 6, 6], mlp_ratio=2)       
     model = model.to(device)
     
-    model.load_state_dict(torch.load(args.pretrained_model)['state_dict'])
+    model.load_state_dict(torch.load(args.checkpoint)['state_dict'])
     model.eval()
 
     datasets = SIG17_Test_Dataset(args.dataset_dir, args.patch_size)  
