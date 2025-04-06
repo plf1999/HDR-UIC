@@ -411,7 +411,7 @@ def parse_args(argv):
     )
     parser.add_argument("--checkpoint", type=str, help="Path to a checkpoint")
     parser.add_argument("--type", type=str, default='mse', help="loss type", choices=['mse', "ms-ssim"])
-    parser.add_argument("--save_path", type=str, help="save_path")
+    parser.add_argument("--save_path", type=str, default='./log', help="save_path")
     parser.add_argument(
         "--skip_epoch", type=int, default=0
     )
@@ -429,7 +429,7 @@ def parse_args(argv):
         default='0',
         help="select GPU for train",
     )
-    parser.add_argument("--dataset_dir", type=str, default='./dataset',help='dataset directory')
+    parser.add_argument("--dataset_dir", type=str, default='./dataset', help='dataset directory')
     args = parser.parse_args(argv)
     return args
 
